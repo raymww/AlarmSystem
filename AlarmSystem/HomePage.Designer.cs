@@ -33,6 +33,7 @@ namespace AlarmSystem
             this.lblNextAlarm = new System.Windows.Forms.Label();
             this.btnNewAlarm = new System.Windows.Forms.Button();
             this.btnViewAlarm = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblWelcome
@@ -55,6 +56,7 @@ namespace AlarmSystem
             this.lblNextAlarm.Size = new System.Drawing.Size(278, 21);
             this.lblNextAlarm.TabIndex = 1;
             this.lblNextAlarm.Text = "Next Alarm: XX:XX AM on XX/XX";
+            this.lblNextAlarm.Click += new System.EventHandler(this.lblNextAlarm_Click);
             // 
             // btnNewAlarm
             // 
@@ -78,17 +80,30 @@ namespace AlarmSystem
             this.btnViewAlarm.UseVisualStyleBackColor = true;
             this.btnViewAlarm.Click += new System.EventHandler(this.btnViewAlarm_Click);
             // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(325, 376);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(119, 33);
+            this.btnClose.TabIndex = 4;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnViewAlarm);
             this.Controls.Add(this.btnNewAlarm);
             this.Controls.Add(this.lblNextAlarm);
             this.Controls.Add(this.lblWelcome);
             this.Name = "HomePage";
             this.Text = "CustomAlarm";
+            this.Load += new System.EventHandler(this.HomePage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,6 +115,7 @@ namespace AlarmSystem
         private System.Windows.Forms.Label lblNextAlarm;
         private System.Windows.Forms.Button btnNewAlarm;
         private System.Windows.Forms.Button btnViewAlarm;
+        private System.Windows.Forms.Button btnClose;
     }
 }
 

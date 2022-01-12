@@ -46,6 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassAlarm.cs" />
+    <Compile Include="CustomRepetitionPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomRepetitionPage.Designer.cs">
+      <DependentUpon>CustomRepetitionPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditAlarmPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditAlarmPage.Designer.cs">
+      <DependentUpon>EditAlarmPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAlarmPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAlarmPage.Designer.cs">
+      <DependentUpon>ViewAlarmPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewAlarmPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EditAlarmPage.resx">
+      <DependentUpon>EditAlarmPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +97,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ViewAlarmPage.resx">
+      <DependentUpon>ViewAlarmPage.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

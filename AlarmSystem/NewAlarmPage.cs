@@ -16,5 +16,31 @@ namespace AlarmSystem
         {
             InitializeComponent();
         }
+        private void NewAlarmPage_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+            this.SetControls();
+        }
+
+        private void SetControls()
+        {
+            //form
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Text = "CustomAlarm";
+            //label
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnCustRepetition_Click(object sender, EventArgs e)
+        {
+            CustomRepetitionPage customRepetition = new CustomRepetitionPage();
+            customRepetition.ShowDialog();
+        }
     }
 }
