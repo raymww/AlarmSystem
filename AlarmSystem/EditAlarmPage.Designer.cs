@@ -50,6 +50,7 @@ namespace AlarmSystem
             this.Controls.Add(this.btnClose);
             this.Name = "EditAlarmPage";
             this.Text = "CustomAlarm";
+            this.Load += new System.EventHandler(this.EditAlarmPage_Load);
             this.ResumeLayout(false);
 
         }

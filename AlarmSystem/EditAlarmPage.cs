@@ -21,5 +21,21 @@ namespace AlarmSystem
         {
             this.Dispose();
         }
+
+        private void EditAlarmPage_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+            this.SetControls();
+        }
+
+        private void SetControls()
+        {
+            //form
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Text = "CustomAlarm";
+            //label
+        }
     }
 }

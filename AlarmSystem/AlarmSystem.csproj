@@ -79,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomRepetitionPage.resx">
+      <DependentUpon>CustomRepetitionPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditAlarmPage.resx">
       <DependentUpon>EditAlarmPage.cs</DependentUpon>
     </EmbeddedResource>

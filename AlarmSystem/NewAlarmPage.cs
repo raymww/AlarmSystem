@@ -42,5 +42,15 @@ namespace AlarmSystem
             CustomRepetitionPage customRepetition = new CustomRepetitionPage();
             customRepetition.ShowDialog();
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
