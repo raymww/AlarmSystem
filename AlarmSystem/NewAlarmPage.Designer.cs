@@ -30,24 +30,28 @@ namespace AlarmSystem
         private void InitializeComponent()
         {
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnCustRepetition = new System.Windows.Forms.Button();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.dtStartDate = new System.Windows.Forms.DateTimePicker();
             this.lblStartDate = new System.Windows.Forms.Label();
             this.lblStartTime = new System.Windows.Forms.Label();
-            this.rbtnAM = new System.Windows.Forms.RadioButton();
-            this.rbtnPM = new System.Windows.Forms.RadioButton();
             this.numMin = new System.Windows.Forms.NumericUpDown();
             this.numHour = new System.Windows.Forms.NumericUpDown();
             this.lblColon = new System.Windows.Forms.Label();
             this.btnSet = new System.Windows.Forms.Button();
             this.lblRepetition = new System.Windows.Forms.Label();
+            this.txtNewAlarmName = new System.Windows.Forms.TextBox();
+            this.lblAlarmName = new System.Windows.Forms.Label();
+            this.radbtnDaily = new System.Windows.Forms.RadioButton();
+            this.radbtnWeekly = new System.Windows.Forms.RadioButton();
+            this.radbtnCustom = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.numMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHour)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(282, 484);
+            this.btnCancel.Location = new System.Drawing.Point(282, 434);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(64, 57);
             this.btnCancel.TabIndex = 0;
@@ -55,28 +59,20 @@ namespace AlarmSystem
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnCustRepetition
+            // dtStartDate
             // 
-            this.btnCustRepetition.Location = new System.Drawing.Point(197, 355);
-            this.btnCustRepetition.Name = "btnCustRepetition";
-            this.btnCustRepetition.Size = new System.Drawing.Size(149, 57);
-            this.btnCustRepetition.TabIndex = 1;
-            this.btnCustRepetition.Text = "Custom Repetition";
-            this.btnCustRepetition.UseVisualStyleBackColor = true;
-            this.btnCustRepetition.Click += new System.EventHandler(this.btnCustRepetition_Click);
-            // 
-            // dateTimePicker
-            // 
-            this.dateTimePicker.Location = new System.Drawing.Point(163, 87);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(227, 20);
-            this.dateTimePicker.TabIndex = 2;
-            this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dtStartDate.Location = new System.Drawing.Point(165, 139);
+            this.dtStartDate.MinDate = new System.DateTime(2022, 1, 21, 11, 58, 46, 0);
+            this.dtStartDate.Name = "dtStartDate";
+            this.dtStartDate.Size = new System.Drawing.Size(227, 20);
+            this.dtStartDate.TabIndex = 2;
+            this.dtStartDate.Value = new System.DateTime(2022, 1, 21, 11, 58, 46, 0);
+            this.dtStartDate.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // lblStartDate
             // 
             this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Location = new System.Drawing.Point(242, 59);
+            this.lblStartDate.Location = new System.Drawing.Point(244, 106);
             this.lblStartDate.Name = "lblStartDate";
             this.lblStartDate.Size = new System.Drawing.Size(58, 13);
             this.lblStartDate.TabIndex = 3;
@@ -85,37 +81,15 @@ namespace AlarmSystem
             // lblStartTime
             // 
             this.lblStartTime.AutoSize = true;
-            this.lblStartTime.Location = new System.Drawing.Point(242, 132);
+            this.lblStartTime.Location = new System.Drawing.Point(244, 184);
             this.lblStartTime.Name = "lblStartTime";
             this.lblStartTime.Size = new System.Drawing.Size(58, 13);
             this.lblStartTime.TabIndex = 4;
             this.lblStartTime.Text = "Start Time:";
             // 
-            // rbtnAM
-            // 
-            this.rbtnAM.AutoSize = true;
-            this.rbtnAM.Location = new System.Drawing.Point(309, 157);
-            this.rbtnAM.Name = "rbtnAM";
-            this.rbtnAM.Size = new System.Drawing.Size(47, 17);
-            this.rbtnAM.TabIndex = 5;
-            this.rbtnAM.TabStop = true;
-            this.rbtnAM.Text = "A.M.";
-            this.rbtnAM.UseVisualStyleBackColor = true;
-            // 
-            // rbtnPM
-            // 
-            this.rbtnPM.AutoSize = true;
-            this.rbtnPM.Location = new System.Drawing.Point(309, 180);
-            this.rbtnPM.Name = "rbtnPM";
-            this.rbtnPM.Size = new System.Drawing.Size(47, 17);
-            this.rbtnPM.TabIndex = 6;
-            this.rbtnPM.TabStop = true;
-            this.rbtnPM.Text = "P.M.";
-            this.rbtnPM.UseVisualStyleBackColor = true;
-            // 
             // numMin
             // 
-            this.numMin.Location = new System.Drawing.Point(239, 167);
+            this.numMin.Location = new System.Drawing.Point(282, 226);
             this.numMin.Maximum = new decimal(new int[] {
             59,
             0,
@@ -127,30 +101,20 @@ namespace AlarmSystem
             // 
             // numHour
             // 
-            this.numHour.Location = new System.Drawing.Point(175, 167);
+            this.numHour.Location = new System.Drawing.Point(218, 226);
             this.numHour.Maximum = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            this.numHour.Minimum = new decimal(new int[] {
-            1,
+            23,
             0,
             0,
             0});
             this.numHour.Name = "numHour";
             this.numHour.Size = new System.Drawing.Size(42, 20);
             this.numHour.TabIndex = 8;
-            this.numHour.Value = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
             // 
             // lblColon
             // 
             this.lblColon.AutoSize = true;
-            this.lblColon.Location = new System.Drawing.Point(223, 169);
+            this.lblColon.Location = new System.Drawing.Point(266, 228);
             this.lblColon.Name = "lblColon";
             this.lblColon.Size = new System.Drawing.Size(10, 13);
             this.lblColon.TabIndex = 9;
@@ -159,44 +123,110 @@ namespace AlarmSystem
             // 
             // btnSet
             // 
-            this.btnSet.Location = new System.Drawing.Point(197, 484);
+            this.btnSet.Location = new System.Drawing.Point(196, 434);
             this.btnSet.Name = "btnSet";
             this.btnSet.Size = new System.Drawing.Size(64, 57);
             this.btnSet.TabIndex = 10;
             this.btnSet.Text = "Set";
             this.btnSet.UseVisualStyleBackColor = true;
+            this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
             // 
             // lblRepetition
             // 
             this.lblRepetition.AutoSize = true;
-            this.lblRepetition.Location = new System.Drawing.Point(242, 234);
+            this.lblRepetition.Location = new System.Drawing.Point(244, 274);
             this.lblRepetition.Name = "lblRepetition";
             this.lblRepetition.Size = new System.Drawing.Size(58, 13);
             this.lblRepetition.TabIndex = 11;
             this.lblRepetition.Text = "Repetition:";
+            // 
+            // txtNewAlarmName
+            // 
+            this.txtNewAlarmName.Location = new System.Drawing.Point(221, 75);
+            this.txtNewAlarmName.Name = "txtNewAlarmName";
+            this.txtNewAlarmName.Size = new System.Drawing.Size(100, 20);
+            this.txtNewAlarmName.TabIndex = 12;
+            this.txtNewAlarmName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // lblAlarmName
+            // 
+            this.lblAlarmName.AutoSize = true;
+            this.lblAlarmName.Location = new System.Drawing.Point(240, 46);
+            this.lblAlarmName.Name = "lblAlarmName";
+            this.lblAlarmName.Size = new System.Drawing.Size(67, 13);
+            this.lblAlarmName.TabIndex = 13;
+            this.lblAlarmName.Text = "Alarm Name:";
+            // 
+            // radbtnDaily
+            // 
+            this.radbtnDaily.AutoSize = true;
+            this.radbtnDaily.Location = new System.Drawing.Point(35, 19);
+            this.radbtnDaily.Name = "radbtnDaily";
+            this.radbtnDaily.Size = new System.Drawing.Size(48, 17);
+            this.radbtnDaily.TabIndex = 14;
+            this.radbtnDaily.TabStop = true;
+            this.radbtnDaily.Text = "Daily";
+            this.radbtnDaily.UseVisualStyleBackColor = true;
+            // 
+            // radbtnWeekly
+            // 
+            this.radbtnWeekly.AutoSize = true;
+            this.radbtnWeekly.Location = new System.Drawing.Point(96, 19);
+            this.radbtnWeekly.Name = "radbtnWeekly";
+            this.radbtnWeekly.Size = new System.Drawing.Size(61, 17);
+            this.radbtnWeekly.TabIndex = 15;
+            this.radbtnWeekly.TabStop = true;
+            this.radbtnWeekly.Text = "Weekly";
+            this.radbtnWeekly.UseVisualStyleBackColor = true;
+            // 
+            // radbtnCustom
+            // 
+            this.radbtnCustom.AutoSize = true;
+            this.radbtnCustom.Location = new System.Drawing.Point(61, 75);
+            this.radbtnCustom.Name = "radbtnCustom";
+            this.radbtnCustom.Size = new System.Drawing.Size(60, 17);
+            this.radbtnCustom.TabIndex = 16;
+            this.radbtnCustom.TabStop = true;
+            this.radbtnCustom.Text = "Custom";
+            this.radbtnCustom.UseVisualStyleBackColor = true;
+            this.radbtnCustom.CheckedChanged += new System.EventHandler(this.radbtnCustom_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radbtnWeekly);
+            this.groupBox1.Controls.Add(this.radbtnCustom);
+            this.groupBox1.Controls.Add(this.radbtnDaily);
+            this.groupBox1.Location = new System.Drawing.Point(192, 308);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
             // 
             // NewAlarmPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 577);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.lblAlarmName);
+            this.Controls.Add(this.txtNewAlarmName);
             this.Controls.Add(this.lblRepetition);
             this.Controls.Add(this.btnSet);
             this.Controls.Add(this.lblColon);
             this.Controls.Add(this.numHour);
             this.Controls.Add(this.numMin);
-            this.Controls.Add(this.rbtnPM);
-            this.Controls.Add(this.rbtnAM);
             this.Controls.Add(this.lblStartTime);
             this.Controls.Add(this.lblStartDate);
-            this.Controls.Add(this.dateTimePicker);
-            this.Controls.Add(this.btnCustRepetition);
+            this.Controls.Add(this.dtStartDate);
             this.Controls.Add(this.btnCancel);
             this.Name = "NewAlarmPage";
             this.Text = "CustomAlarm";
             this.Load += new System.EventHandler(this.NewAlarmPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHour)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,16 +235,19 @@ namespace AlarmSystem
         #endregion
 
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnCustRepetition;
-        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.DateTimePicker dtStartDate;
         private System.Windows.Forms.Label lblStartDate;
         private System.Windows.Forms.Label lblStartTime;
-        private System.Windows.Forms.RadioButton rbtnAM;
-        private System.Windows.Forms.RadioButton rbtnPM;
         private System.Windows.Forms.NumericUpDown numMin;
         private System.Windows.Forms.NumericUpDown numHour;
         private System.Windows.Forms.Label lblColon;
         private System.Windows.Forms.Button btnSet;
         private System.Windows.Forms.Label lblRepetition;
+        private System.Windows.Forms.TextBox txtNewAlarmName;
+        private System.Windows.Forms.Label lblAlarmName;
+        private System.Windows.Forms.RadioButton radbtnDaily;
+        private System.Windows.Forms.RadioButton radbtnWeekly;
+        private System.Windows.Forms.RadioButton radbtnCustom;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

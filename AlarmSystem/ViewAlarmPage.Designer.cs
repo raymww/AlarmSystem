@@ -30,7 +30,7 @@ namespace AlarmSystem
         private void InitializeComponent()
         {
             this.btnClose = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstbxViewAlarm = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btnClose
@@ -43,21 +43,21 @@ namespace AlarmSystem
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // listBox1
+            // lstbxViewAlarm
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(256, 77);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(299, 108);
-            this.listBox1.TabIndex = 1;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.lstbxViewAlarm.FormattingEnabled = true;
+            this.lstbxViewAlarm.Location = new System.Drawing.Point(256, 77);
+            this.lstbxViewAlarm.Name = "lstbxViewAlarm";
+            this.lstbxViewAlarm.Size = new System.Drawing.Size(299, 108);
+            this.lstbxViewAlarm.TabIndex = 1;
+            this.lstbxViewAlarm.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // ViewAlarmPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lstbxViewAlarm);
             this.Controls.Add(this.btnClose);
             this.Name = "ViewAlarmPage";
             this.Text = "CustomAlarm";
@@ -69,6 +69,6 @@ namespace AlarmSystem
         #endregion
 
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstbxViewAlarm;
     }
 }

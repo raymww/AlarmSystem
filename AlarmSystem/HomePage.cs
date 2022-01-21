@@ -12,6 +12,8 @@ namespace AlarmSystem
 {
     public partial class HomePage : Form
     {
+        List<ClassAlarm> ClassAlarmCollection = new List<ClassAlarm>();
+
         public HomePage()
         {
             InitializeComponent();
@@ -36,6 +38,7 @@ namespace AlarmSystem
         private void btnNewAlarm_Click(object sender, EventArgs e)
         {
             NewAlarmPage newAlarm = new NewAlarmPage();
+            newAlarm.ClassAlarmCollection = ClassAlarmCollection;
             newAlarm.ShowDialog();
         }
 
@@ -53,6 +56,12 @@ namespace AlarmSystem
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void setAlarm(string name, string date, string time)
+        {
+            
+
         }
     }
 }

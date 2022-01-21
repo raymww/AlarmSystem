@@ -11,7 +11,9 @@ using System.Windows.Forms;
 namespace AlarmSystem
 {
     public partial class NewAlarmPage : Form
-    {
+    {   
+        public List<ClassAlarm> ClassAlarmCollection { get; set; }
+
         public NewAlarmPage()
         {
             InitializeComponent();
@@ -49,6 +51,26 @@ namespace AlarmSystem
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSet_Click(object sender, EventArgs e)
+        {
+            ClassAlarmCollection.Add(new ClassAlarm()
+            {
+                alarmName = this.txtNewAlarmName.Text.Trim(),
+                date = this.dtStartDate.Text,
+                time = this.numHour.Value.ToString() + ":" + this.numMin.Value.ToString()
+            });
+        }
+
+        private void radbtnCustom_CheckedChanged(object sender, EventArgs e)
         {
 
         }
