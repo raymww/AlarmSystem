@@ -1,4 +1,6 @@
 ﻿using System;
+using AlarmSystem.Models;
+using AlarmSystem.Events;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,8 @@ namespace AlarmSystem
 {
     public partial class HomePage : Form
     {
+        List<ClassAlarm> ClassAlarmsCollection = new List<ClassAlarm>();
+
         public HomePage()
         {
             InitializeComponent();
@@ -21,6 +25,20 @@ namespace AlarmSystem
         {
             this.CenterToScreen();
             this.SetControls();
+
+            ClassAlarmsCollection = ClassAlarm.GetAlarms();
+
+            this.PopulateTimers();
+        }
+
+        private void PopulateTimers()
+        {
+            //Use LINQ to get customers from the CustomersModel
+            var customers = (from c in ClassAlarmsCollection
+                             select c.alarmName).ToList();
+
+            //Set the DataSource of the listbox to the customers collection
+            this.lstbxCurrentAlarms.DataSource = customers;
         }
 
         private void SetControls()
@@ -36,7 +54,19 @@ namespace AlarmSystem
         private void btnNewAlarm_Click(object sender, EventArgs e)
         {
             NewAlarmPage newAlarm = new NewAlarmPage();
+            newAlarm.ClassAlarmsCollection = this.ClassAlarmsCollection;
+
+            //Access the Event which is used by the Delegate
+            //Pass in a method on THIS FORM 
+            //This will cause the Deletegate on the Form2 Form
+            //To access the method on this Form
+            //UpdateCustomers is the Variable declared in Form2
+            //CustomersHandler is the delegate declared in Form2
+            NewAlarmPage.UpdateTimers += new NewAlarmPage.TimersHandler(TimersUpdate);
+
             newAlarm.ShowDialog();
+
+
         }
 
         private void btnViewAlarm_Click(object sender, EventArgs e)
@@ -53,6 +83,21 @@ namespace AlarmSystem
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void setAlarm(string name, string date, string time)
+        {
+            
+
+        }
+
+        private void TimersUpdate(object s, UpdateTimerEventArgs e)
+        {
+            //Get the customers from Form2 which was passed to the
+            //UpdateCustomersEventArg class that we created for this
+            ClassAlarmsCollection = e.GetTimers;
+
+            this.PopulateTimers();
         }
     }
 }
