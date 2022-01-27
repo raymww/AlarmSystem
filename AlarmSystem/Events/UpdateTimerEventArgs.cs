@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AlarmSystem.Events
 {
-    class UpdateTimerEventArgs : EventArgs
+    public class UpdateTimerEventArgs : EventArgs
     {
         //ArrayList
         private List<ClassAlarm> timers = new List<ClassAlarm>();

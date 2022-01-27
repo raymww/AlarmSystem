@@ -16,12 +16,12 @@ namespace AlarmSystem
     {
         public List<ClassAlarm> Timers;
         //Delegate
-        public delegate void TimersHandler(object sender, UpdateTimerEventArgs e);
+        public delegate void TimerHandler(object sender, UpdateTimerEventArgs e);
 
         //Event for Delegate 
         //Type CustomersHandler matches the Delegate above
         //UpdateCustomers is the variable used by Form1
-        public event TimersHandler UpdateTimers;
+        public event TimerHandler UpdateTimers;
 
         //ArrayList - Updated by Form1
         public List<ClassAlarm> ClassAlarmsCollection;
