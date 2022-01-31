@@ -62,7 +62,7 @@ namespace AlarmSystem
             //To access the method on this Form
             //UpdateCustomers is the Variable declared in Form2
             //CustomersHandler is the delegate declared in Form2
-            NewAlarmPage.UpdateTimers += new NewAlarmPage.TimersHandler(TimersUpdate);
+            newAlarm.UpdateTimers += new NewAlarmPage.TimerHandler(TimersUpdate);
 
             newAlarm.ShowDialog();
 
