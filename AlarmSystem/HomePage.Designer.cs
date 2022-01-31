@@ -34,7 +34,6 @@ namespace AlarmSystem
             this.btnNewAlarm = new System.Windows.Forms.Button();
             this.btnViewAlarm = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.lstbxCurrentAlarms = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lblWelcome
@@ -84,7 +83,7 @@ namespace AlarmSystem
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(325, 565);
+            this.btnClose.Location = new System.Drawing.Point(325, 376);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(119, 33);
             this.btnClose.TabIndex = 4;
@@ -92,20 +91,11 @@ namespace AlarmSystem
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lstbxCurrentAlarms
-            // 
-            this.lstbxCurrentAlarms.FormattingEnabled = true;
-            this.lstbxCurrentAlarms.Location = new System.Drawing.Point(236, 230);
-            this.lstbxCurrentAlarms.Name = "lstbxCurrentAlarms";
-            this.lstbxCurrentAlarms.Size = new System.Drawing.Size(311, 329);
-            this.lstbxCurrentAlarms.TabIndex = 5;
-            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 632);
-            this.Controls.Add(this.lstbxCurrentAlarms);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnViewAlarm);
             this.Controls.Add(this.btnNewAlarm);
@@ -126,7 +116,6 @@ namespace AlarmSystem
         private System.Windows.Forms.Button btnNewAlarm;
         private System.Windows.Forms.Button btnViewAlarm;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.ListBox lstbxCurrentAlarms;
     }
 }
 
