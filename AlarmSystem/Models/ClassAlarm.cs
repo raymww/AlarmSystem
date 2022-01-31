@@ -1,4 +1,6 @@
 ﻿using System;
+using AlarmSystem.Events;
+using AlarmSystem.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,14 @@ namespace AlarmSystem
             this.date = date;
             this.time = time;
             this.alarmName = alarmName;
+        }
+
+        public static List<ClassAlarm> GetAlarms()
+        {
+            return new List<ClassAlarm>
+            {
+               
+            };
         }
     }
 }
