@@ -54,16 +54,6 @@ namespace AlarmSystem
         private void btnNewAlarm_Click(object sender, EventArgs e)
         {
             NewAlarmPage newAlarm = new NewAlarmPage();
-            newAlarm.ClassAlarmsCollection = this.ClassAlarmsCollection;
-
-            //Access the Event which is used by the Delegate
-            //Pass in a method on THIS FORM 
-            //This will cause the Deletegate on the Form2 Form
-            //To access the method on this Form
-            //UpdateCustomers is the Variable declared in Form2
-            //CustomersHandler is the delegate declared in Form2
-            NewAlarmPage.UpdateTimers += new NewAlarmPage.TimersHandler(TimersUpdate);
-
             newAlarm.ShowDialog();
 
 
@@ -83,21 +73,6 @@ namespace AlarmSystem
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        }
-
-        private void setAlarm(string name, string date, string time)
-        {
-            
-
-        }
-
-        private void TimersUpdate(object s, UpdateTimerEventArgs e)
-        {
-            //Get the customers from Form2 which was passed to the
-            //UpdateCustomersEventArg class that we created for this
-            ClassAlarmsCollection = e.GetTimers;
-
-            this.PopulateTimers();
         }
     }
 }

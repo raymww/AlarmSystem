@@ -46,9 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Events\UpdateTimerEventArgs.cs" />
-    <Compile Include="Models\TitlesModel.cs" />
-    <Compile Include="Models\ClassAlarm.cs" />
+    <Compile Include="ClassAlarm.cs" />
     <Compile Include="CustomRepetitionPage.cs">
       <SubType>Form</SubType>
     </Compile>
