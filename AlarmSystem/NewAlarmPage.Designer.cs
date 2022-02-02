@@ -43,10 +43,11 @@ namespace AlarmSystem
             this.radbtnDaily = new System.Windows.Forms.RadioButton();
             this.radbtnWeekly = new System.Windows.Forms.RadioButton();
             this.radbtnCustom = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpBoxRepetition = new System.Windows.Forms.GroupBox();
+            this.radbtnNoRep = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.numMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHour)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.grpBoxRepetition.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -182,7 +183,7 @@ namespace AlarmSystem
             // radbtnCustom
             // 
             this.radbtnCustom.AutoSize = true;
-            this.radbtnCustom.Location = new System.Drawing.Point(61, 75);
+            this.radbtnCustom.Location = new System.Drawing.Point(35, 64);
             this.radbtnCustom.Name = "radbtnCustom";
             this.radbtnCustom.Size = new System.Drawing.Size(60, 17);
             this.radbtnCustom.TabIndex = 16;
@@ -191,24 +192,36 @@ namespace AlarmSystem
             this.radbtnCustom.UseVisualStyleBackColor = true;
             this.radbtnCustom.CheckedChanged += new System.EventHandler(this.radbtnCustom_CheckedChanged);
             // 
-            // groupBox1
+            // grpBoxRepetition
             // 
-            this.groupBox1.Controls.Add(this.radbtnWeekly);
-            this.groupBox1.Controls.Add(this.radbtnCustom);
-            this.groupBox1.Controls.Add(this.radbtnDaily);
-            this.groupBox1.Location = new System.Drawing.Point(192, 308);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.grpBoxRepetition.Controls.Add(this.radbtnNoRep);
+            this.grpBoxRepetition.Controls.Add(this.radbtnWeekly);
+            this.grpBoxRepetition.Controls.Add(this.radbtnCustom);
+            this.grpBoxRepetition.Controls.Add(this.radbtnDaily);
+            this.grpBoxRepetition.Location = new System.Drawing.Point(192, 308);
+            this.grpBoxRepetition.Name = "grpBoxRepetition";
+            this.grpBoxRepetition.Size = new System.Drawing.Size(200, 100);
+            this.grpBoxRepetition.TabIndex = 17;
+            this.grpBoxRepetition.TabStop = false;
+            this.grpBoxRepetition.Text = "Options:";
+            // 
+            // radbtnNoRep
+            // 
+            this.radbtnNoRep.AutoSize = true;
+            this.radbtnNoRep.Location = new System.Drawing.Point(96, 64);
+            this.radbtnNoRep.Name = "radbtnNoRep";
+            this.radbtnNoRep.Size = new System.Drawing.Size(90, 17);
+            this.radbtnNoRep.TabIndex = 17;
+            this.radbtnNoRep.TabStop = true;
+            this.radbtnNoRep.Text = "No Repetition";
+            this.radbtnNoRep.UseVisualStyleBackColor = true;
             // 
             // NewAlarmPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 577);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpBoxRepetition);
             this.Controls.Add(this.lblAlarmName);
             this.Controls.Add(this.txtNewAlarmName);
             this.Controls.Add(this.lblRepetition);
@@ -225,8 +238,8 @@ namespace AlarmSystem
             this.Load += new System.EventHandler(this.NewAlarmPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHour)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpBoxRepetition.ResumeLayout(false);
+            this.grpBoxRepetition.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,6 +261,7 @@ namespace AlarmSystem
         private System.Windows.Forms.RadioButton radbtnDaily;
         private System.Windows.Forms.RadioButton radbtnWeekly;
         private System.Windows.Forms.RadioButton radbtnCustom;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpBoxRepetition;
+        private System.Windows.Forms.RadioButton radbtnNoRep;
     }
 }

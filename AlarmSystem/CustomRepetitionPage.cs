@@ -14,23 +14,17 @@ namespace AlarmSystem
     {
         public CustomRepetitionPage()
         {
-            this.CenterToScreen();
-            this.SetControls();
+            InitializeComponent();
         }
 
-        private void CustomRepetitionPage_Load(object sender, EventArgs e)
+        private void CustomRepetition_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void SetControls()
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            //form
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Text = "CustomAlarm";
-            //label
+
         }
     }
 }

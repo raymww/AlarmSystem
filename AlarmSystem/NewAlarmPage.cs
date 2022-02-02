@@ -74,8 +74,11 @@ namespace AlarmSystem
 
         private void btnSet_Click(object sender, EventArgs e)
         {
+            
             if (!this.PerformValidation())
+            { 
                 return;
+            }
 
             ClassAlarmsCollection.Add(new ClassAlarm()
             {
@@ -83,6 +86,10 @@ namespace AlarmSystem
                 date = this.dtStartDate.Text,
                 time = this.numHour.Value.ToString() + ":" + this.numMin.Value.ToString()
             });
+
+            MessageBox.Show("Alarm Set!", TitlesModel.MessageBoxTitle,
+                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
         }
 
         private void radbtnCustom_CheckedChanged(object sender, EventArgs e)
@@ -98,6 +105,14 @@ namespace AlarmSystem
                 MessageBox.Show("A Customer must be entered!", TitlesModel.MessageBoxTitle,
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.txtNewAlarmName.Focus();
+                return false;
+            }
+
+            if (String.IsNullOrEmpty(this.dtStartDate.Text.Trim()))
+            {
+                MessageBox.Show("A Date must be entered!", TitlesModel.MessageBoxTitle,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.dtStartDate.Focus();
                 return false;
             }
 

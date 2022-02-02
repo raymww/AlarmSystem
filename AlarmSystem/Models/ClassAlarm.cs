@@ -14,9 +14,13 @@ namespace AlarmSystem
         public string time{get; set;}
         public string alarmName{get; set;}
 
+        public Boolean repeat { get; set; }
+
+        public List<int> repetition { get; set;}
+
         public ClassAlarm()
         {
-
+            repeat = false;
         }
 
         public ClassAlarm(string date, string time, string alarmName)
@@ -24,13 +28,14 @@ namespace AlarmSystem
             this.date = date;
             this.time = time;
             this.alarmName = alarmName;
+            repeat = false;
         }
 
         public static List<ClassAlarm> GetAlarms()
         {
             return new List<ClassAlarm>
             {
-               
+               new ClassAlarm("2-2-22", "12:00", "test1"),
             };
         }
     }
