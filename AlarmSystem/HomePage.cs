@@ -34,11 +34,11 @@ namespace AlarmSystem
         private void PopulateTimers()
         {
             //Use LINQ to get customers from the CustomersModel
-            var customers = (from c in ClassAlarmsCollection
+            var alarms = (from c in ClassAlarmsCollection
                              select c.alarmName).ToList();
 
             //Set the DataSource of the listbox to the customers collection
-            this.lstbxCurrentAlarms.DataSource = customers;
+            this.lstbxCurrentAlarms.DataSource = alarms;
         }
 
         private void SetControls()
@@ -69,12 +69,6 @@ namespace AlarmSystem
 
         }
 
-        private void btnViewAlarm_Click(object sender, EventArgs e)
-        {
-            ViewAlarmPage viewAlarms= new ViewAlarmPage();
-            viewAlarms.ShowDialog();
-        }
-
         private void lblNextAlarm_Click(object sender, EventArgs e)
         {
 
@@ -98,6 +92,11 @@ namespace AlarmSystem
             ClassAlarmsCollection = e.GetTimers;
 
             this.PopulateTimers();
+        }
+
+        private void lstbxCurrentAlarms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

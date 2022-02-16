@@ -52,7 +52,7 @@ namespace AlarmSystem
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(282, 434);
+            this.btnCancel.Location = new System.Drawing.Point(169, 425);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(64, 57);
             this.btnCancel.TabIndex = 0;
@@ -62,7 +62,7 @@ namespace AlarmSystem
             // 
             // dtStartDate
             // 
-            this.dtStartDate.Location = new System.Drawing.Point(165, 139);
+            this.dtStartDate.Location = new System.Drawing.Point(52, 130);
             this.dtStartDate.MinDate = new System.DateTime(2022, 1, 21, 11, 58, 46, 0);
             this.dtStartDate.Name = "dtStartDate";
             this.dtStartDate.Size = new System.Drawing.Size(227, 20);
@@ -73,7 +73,7 @@ namespace AlarmSystem
             // lblStartDate
             // 
             this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Location = new System.Drawing.Point(244, 106);
+            this.lblStartDate.Location = new System.Drawing.Point(131, 97);
             this.lblStartDate.Name = "lblStartDate";
             this.lblStartDate.Size = new System.Drawing.Size(58, 13);
             this.lblStartDate.TabIndex = 3;
@@ -82,7 +82,7 @@ namespace AlarmSystem
             // lblStartTime
             // 
             this.lblStartTime.AutoSize = true;
-            this.lblStartTime.Location = new System.Drawing.Point(244, 184);
+            this.lblStartTime.Location = new System.Drawing.Point(131, 175);
             this.lblStartTime.Name = "lblStartTime";
             this.lblStartTime.Size = new System.Drawing.Size(58, 13);
             this.lblStartTime.TabIndex = 4;
@@ -90,7 +90,7 @@ namespace AlarmSystem
             // 
             // numMin
             // 
-            this.numMin.Location = new System.Drawing.Point(282, 226);
+            this.numMin.Location = new System.Drawing.Point(169, 217);
             this.numMin.Maximum = new decimal(new int[] {
             59,
             0,
@@ -102,7 +102,7 @@ namespace AlarmSystem
             // 
             // numHour
             // 
-            this.numHour.Location = new System.Drawing.Point(218, 226);
+            this.numHour.Location = new System.Drawing.Point(105, 217);
             this.numHour.Maximum = new decimal(new int[] {
             23,
             0,
@@ -115,7 +115,7 @@ namespace AlarmSystem
             // lblColon
             // 
             this.lblColon.AutoSize = true;
-            this.lblColon.Location = new System.Drawing.Point(266, 228);
+            this.lblColon.Location = new System.Drawing.Point(153, 219);
             this.lblColon.Name = "lblColon";
             this.lblColon.Size = new System.Drawing.Size(10, 13);
             this.lblColon.TabIndex = 9;
@@ -124,7 +124,7 @@ namespace AlarmSystem
             // 
             // btnSet
             // 
-            this.btnSet.Location = new System.Drawing.Point(196, 434);
+            this.btnSet.Location = new System.Drawing.Point(83, 425);
             this.btnSet.Name = "btnSet";
             this.btnSet.Size = new System.Drawing.Size(64, 57);
             this.btnSet.TabIndex = 10;
@@ -135,7 +135,7 @@ namespace AlarmSystem
             // lblRepetition
             // 
             this.lblRepetition.AutoSize = true;
-            this.lblRepetition.Location = new System.Drawing.Point(244, 274);
+            this.lblRepetition.Location = new System.Drawing.Point(131, 265);
             this.lblRepetition.Name = "lblRepetition";
             this.lblRepetition.Size = new System.Drawing.Size(58, 13);
             this.lblRepetition.TabIndex = 11;
@@ -143,7 +143,7 @@ namespace AlarmSystem
             // 
             // txtNewAlarmName
             // 
-            this.txtNewAlarmName.Location = new System.Drawing.Point(221, 75);
+            this.txtNewAlarmName.Location = new System.Drawing.Point(108, 66);
             this.txtNewAlarmName.Name = "txtNewAlarmName";
             this.txtNewAlarmName.Size = new System.Drawing.Size(100, 20);
             this.txtNewAlarmName.TabIndex = 12;
@@ -152,7 +152,7 @@ namespace AlarmSystem
             // lblAlarmName
             // 
             this.lblAlarmName.AutoSize = true;
-            this.lblAlarmName.Location = new System.Drawing.Point(240, 46);
+            this.lblAlarmName.Location = new System.Drawing.Point(127, 37);
             this.lblAlarmName.Name = "lblAlarmName";
             this.lblAlarmName.Size = new System.Drawing.Size(67, 13);
             this.lblAlarmName.TabIndex = 13;
@@ -198,7 +198,7 @@ namespace AlarmSystem
             this.grpBoxRepetition.Controls.Add(this.radbtnWeekly);
             this.grpBoxRepetition.Controls.Add(this.radbtnCustom);
             this.grpBoxRepetition.Controls.Add(this.radbtnDaily);
-            this.grpBoxRepetition.Location = new System.Drawing.Point(192, 308);
+            this.grpBoxRepetition.Location = new System.Drawing.Point(62, 296);
             this.grpBoxRepetition.Name = "grpBoxRepetition";
             this.grpBoxRepetition.Size = new System.Drawing.Size(200, 100);
             this.grpBoxRepetition.TabIndex = 17;
@@ -220,7 +220,7 @@ namespace AlarmSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(567, 577);
+            this.ClientSize = new System.Drawing.Size(318, 514);
             this.Controls.Add(this.grpBoxRepetition);
             this.Controls.Add(this.lblAlarmName);
             this.Controls.Add(this.txtNewAlarmName);

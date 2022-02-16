@@ -23,19 +23,20 @@ namespace AlarmSystem
             repeat = false;
         }
 
-        public ClassAlarm(string date, string time, string alarmName)
+        public ClassAlarm(string date, string time, string alarmName, Boolean repeat)
         {
             this.date = date;
             this.time = time;
             this.alarmName = alarmName;
-            repeat = false;
+            this.repeat = repeat;
+
         }
 
         public static List<ClassAlarm> GetAlarms()
         {
             return new List<ClassAlarm>
             {
-               new ClassAlarm("2-2-22", "12:00", "test1"),
+               new ClassAlarm("2-2-22", "12:00", "test1", false),
             };
         }
     }

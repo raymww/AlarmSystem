@@ -53,7 +53,6 @@
     <Compile Include="CustomRepetitionPage.Designer.cs">
       <DependentUpon>CustomRepetitionPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Repetition.cs" />
     <Compile Include="Models\TitlesModel.cs" />
     <Compile Include="Models\ClassAlarm.cs" />
     <Compile Include="EditAlarmPage.cs">
@@ -61,12 +60,6 @@
     </Compile>
     <Compile Include="EditAlarmPage.Designer.cs">
       <DependentUpon>EditAlarmPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewAlarmPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ViewAlarmPage.Designer.cs">
-      <DependentUpon>ViewAlarmPage.cs</DependentUpon>
     </Compile>
     <Compile Include="NewAlarmPage.cs">
       <SubType>Form</SubType>
@@ -103,9 +96,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ViewAlarmPage.resx">
-      <DependentUpon>ViewAlarmPage.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

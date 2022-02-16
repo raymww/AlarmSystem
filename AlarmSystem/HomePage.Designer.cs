@@ -32,7 +32,6 @@ namespace AlarmSystem
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblNextAlarm = new System.Windows.Forms.Label();
             this.btnNewAlarm = new System.Windows.Forms.Button();
-            this.btnViewAlarm = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.lstbxCurrentAlarms = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
@@ -41,7 +40,7 @@ namespace AlarmSystem
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(316, 19);
+            this.lblWelcome.Location = new System.Drawing.Point(106, 19);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(131, 36);
             this.lblWelcome.TabIndex = 0;
@@ -52,7 +51,7 @@ namespace AlarmSystem
             // 
             this.lblNextAlarm.AutoSize = true;
             this.lblNextAlarm.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNextAlarm.Location = new System.Drawing.Point(247, 67);
+            this.lblNextAlarm.Location = new System.Drawing.Point(37, 67);
             this.lblNextAlarm.Name = "lblNextAlarm";
             this.lblNextAlarm.Size = new System.Drawing.Size(278, 21);
             this.lblNextAlarm.TabIndex = 1;
@@ -62,7 +61,7 @@ namespace AlarmSystem
             // btnNewAlarm
             // 
             this.btnNewAlarm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewAlarm.Location = new System.Drawing.Point(325, 120);
+            this.btnNewAlarm.Location = new System.Drawing.Point(115, 109);
             this.btnNewAlarm.Name = "btnNewAlarm";
             this.btnNewAlarm.Size = new System.Drawing.Size(119, 34);
             this.btnNewAlarm.TabIndex = 2;
@@ -70,21 +69,10 @@ namespace AlarmSystem
             this.btnNewAlarm.UseVisualStyleBackColor = true;
             this.btnNewAlarm.Click += new System.EventHandler(this.btnNewAlarm_Click);
             // 
-            // btnViewAlarm
-            // 
-            this.btnViewAlarm.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewAlarm.Location = new System.Drawing.Point(325, 177);
-            this.btnViewAlarm.Name = "btnViewAlarm";
-            this.btnViewAlarm.Size = new System.Drawing.Size(119, 34);
-            this.btnViewAlarm.TabIndex = 3;
-            this.btnViewAlarm.Text = "View Current Alarms";
-            this.btnViewAlarm.UseVisualStyleBackColor = true;
-            this.btnViewAlarm.Click += new System.EventHandler(this.btnViewAlarm_Click);
-            // 
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(325, 565);
+            this.btnClose.Location = new System.Drawing.Point(115, 495);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(119, 33);
             this.btnClose.TabIndex = 4;
@@ -95,19 +83,19 @@ namespace AlarmSystem
             // lstbxCurrentAlarms
             // 
             this.lstbxCurrentAlarms.FormattingEnabled = true;
-            this.lstbxCurrentAlarms.Location = new System.Drawing.Point(236, 230);
+            this.lstbxCurrentAlarms.Location = new System.Drawing.Point(27, 155);
             this.lstbxCurrentAlarms.Name = "lstbxCurrentAlarms";
             this.lstbxCurrentAlarms.Size = new System.Drawing.Size(311, 329);
             this.lstbxCurrentAlarms.TabIndex = 5;
+            this.lstbxCurrentAlarms.SelectedIndexChanged += new System.EventHandler(this.lstbxCurrentAlarms_SelectedIndexChanged);
             // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 632);
+            this.ClientSize = new System.Drawing.Size(368, 547);
             this.Controls.Add(this.lstbxCurrentAlarms);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnViewAlarm);
             this.Controls.Add(this.btnNewAlarm);
             this.Controls.Add(this.lblNextAlarm);
             this.Controls.Add(this.lblWelcome);
@@ -124,7 +112,6 @@ namespace AlarmSystem
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblNextAlarm;
         private System.Windows.Forms.Button btnNewAlarm;
-        private System.Windows.Forms.Button btnViewAlarm;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ListBox lstbxCurrentAlarms;
     }

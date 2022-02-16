@@ -80,12 +80,58 @@ namespace AlarmSystem
                 return;
             }
 
-            ClassAlarmsCollection.Add(new ClassAlarm()
+            if (radbtnNoRep.Checked)
             {
-                alarmName = this.txtNewAlarmName.Text.Trim(),
-                date = this.dtStartDate.Text,
-                time = this.numHour.Value.ToString() + ":" + this.numMin.Value.ToString()
-            });
+                ClassAlarmsCollection.Add(new ClassAlarm()
+                {
+                    alarmName = this.txtNewAlarmName.Text.Trim(),
+                    date = this.dtStartDate.Text,
+                    time = this.numHour.Value.ToString() + ":" + this.numMin.Value.ToString(),
+                    repeat = true
+                }) ;
+            }
+
+            if (radbtnDaily.Checked)
+            {
+                ClassAlarmsCollection.Add(new ClassAlarm()
+                {
+                    alarmName = this.txtNewAlarmName.Text.Trim(),
+                    date = this.dtStartDate.Text,
+                    time = this.numHour.Value.ToString() + ":" + this.numMin.Value.ToString(),
+                    repeat = true,
+                    repetition = {1}
+                });
+            }
+
+            if (radbtnWeekly.Checked)
+            {
+                ClassAlarmsCollection.Add(new ClassAlarm()
+                {
+                    alarmName = this.txtNewAlarmName.Text.Trim(),
+                    date = this.dtStartDate.Text,
+                    time = this.numHour.Value.ToString() + ":" + this.numMin.Value.ToString(),
+                    repeat = true,
+                    repetition = {7}
+                });
+            }
+
+            if (radbtnCustom.Checked)
+            {
+                CustomRepetitionPage customRepetition = new CustomRepetitionPage();
+                customRepetition.ShowDialog();
+
+                List<int> repeatOrder = customRepetition.getRepeat();
+                
+                ClassAlarmsCollection.Add(new ClassAlarm()
+                {
+                    alarmName = this.txtNewAlarmName.Text.Trim(),
+                    date = this.dtStartDate.Text,
+                    time = this.numHour.Value.ToString() + ":" + this.numMin.Value.ToString(),
+                    repeat = true,
+                    repetition = repeatOrder
+                });
+
+            }
 
             MessageBox.Show("Alarm Set!", TitlesModel.MessageBoxTitle,
                                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

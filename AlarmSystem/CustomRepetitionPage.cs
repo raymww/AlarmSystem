@@ -12,6 +12,8 @@ namespace AlarmSystem
 {
     public partial class CustomRepetitionPage : Form
     {
+        List<int> repeatOrder = new List<int>();
+
         public CustomRepetitionPage()
         {
             InitializeComponent();
@@ -24,7 +26,12 @@ namespace AlarmSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            repeatOrder.Add((int)updownRepetition.Value);
+        }
 
+        public List<int> getRepeat()
+        {
+            return repeatOrder;
         }
     }
 }
