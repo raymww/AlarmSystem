@@ -34,11 +34,14 @@ namespace AlarmSystem
         private void PopulateTimers()
         {
             //Use LINQ to get customers from the CustomersModel
-            var alarms = (from c in ClassAlarmsCollection
-                             select c.alarmName).ToList();
+            if (ClassAlarmsCollection != null)
+            {
+                var alarms = (from c in ClassAlarmsCollection
+                              select c.alarmName).ToList();
 
-            //Set the DataSource of the listbox to the customers collection
-            this.lstbxCurrentAlarms.DataSource = alarms;
+                //Set the DataSource of the listbox to the customers collection
+                this.lstbxCurrentAlarms.DataSource = alarms;
+            }
         }
 
         private void SetControls()
@@ -55,17 +58,9 @@ namespace AlarmSystem
         {
             NewAlarmPage newAlarm = new NewAlarmPage();
             newAlarm.ClassAlarmsCollection = this.ClassAlarmsCollection;
-
-            //Access the Event which is used by the Delegate
-            //Pass in a method on THIS FORM 
-            //This will cause the Deletegate on the Form2 Form
-            //To access the method on this Form
-            //UpdateCustomers is the Variable declared in Form2
-            //CustomersHandler is the delegate declared in Form2
             newAlarm.UpdateTimers += new NewAlarmPage.TimerHandler(TimersUpdate);
-
             newAlarm.ShowDialog();
-
+            // set the alarm here
 
         }
 

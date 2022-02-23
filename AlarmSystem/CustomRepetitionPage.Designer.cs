@@ -31,7 +31,7 @@ namespace AlarmSystem
         {
             this.updownRepetition = new System.Windows.Forms.NumericUpDown();
             this.lbltitle = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.RepeatList = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.updownRepetition)).BeginInit();
@@ -65,15 +65,15 @@ namespace AlarmSystem
             this.lbltitle.Text = "Repetition:";
             this.lbltitle.UseWaitCursor = true;
             // 
-            // label2
+            // RepeatList
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(365, 98);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(19, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "<>";
-            this.label2.UseWaitCursor = true;
+            this.RepeatList.AutoSize = true;
+            this.RepeatList.Location = new System.Drawing.Point(365, 98);
+            this.RepeatList.Name = "RepeatList";
+            this.RepeatList.Size = new System.Drawing.Size(19, 13);
+            this.RepeatList.TabIndex = 2;
+            this.RepeatList.Text = "<>";
+            this.RepeatList.UseWaitCursor = true;
             // 
             // btnAdd
             // 
@@ -94,6 +94,8 @@ namespace AlarmSystem
             this.button1.TabIndex = 4;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseWaitCursor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CustomRepetitionPage
             // 
@@ -102,7 +104,7 @@ namespace AlarmSystem
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.RepeatList);
             this.Controls.Add(this.lbltitle);
             this.Controls.Add(this.updownRepetition);
             this.Name = "CustomRepetitionPage";
@@ -119,7 +121,7 @@ namespace AlarmSystem
 
         private System.Windows.Forms.NumericUpDown updownRepetition;
         private System.Windows.Forms.Label lbltitle;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label RepeatList;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button1;
     }

@@ -14,7 +14,7 @@ namespace AlarmSystem
 {
     public partial class NewAlarmPage : Form
     {
-        public List<ClassAlarm> Timers;
+        //public List<ClassAlarm> Timers;
         //Delegate
         public delegate void TimerHandler(object sender, UpdateTimerEventArgs e);
 
@@ -87,11 +87,12 @@ namespace AlarmSystem
                     alarmName = this.txtNewAlarmName.Text.Trim(),
                     date = this.dtStartDate.Text,
                     time = this.numHour.Value.ToString() + ":" + this.numMin.Value.ToString(),
-                    repeat = true
+                    repeat = false,
+                    repetition = new List<int> {0}
                 }) ;
             }
 
-            if (radbtnDaily.Checked)
+            else if (radbtnDaily.Checked)
             {
                 ClassAlarmsCollection.Add(new ClassAlarm()
                 {
@@ -99,11 +100,11 @@ namespace AlarmSystem
                     date = this.dtStartDate.Text,
                     time = this.numHour.Value.ToString() + ":" + this.numMin.Value.ToString(),
                     repeat = true,
-                    repetition = {1}
+                    repetition = new List<int>{1}
                 });
             }
 
-            if (radbtnWeekly.Checked)
+            else if (radbtnWeekly.Checked)
             {
                 ClassAlarmsCollection.Add(new ClassAlarm()
                 {
@@ -111,11 +112,11 @@ namespace AlarmSystem
                     date = this.dtStartDate.Text,
                     time = this.numHour.Value.ToString() + ":" + this.numMin.Value.ToString(),
                     repeat = true,
-                    repetition = {7}
+                    repetition = new List<int>{7}
                 });
             }
 
-            if (radbtnCustom.Checked)
+            else if (radbtnCustom.Checked)
             {
                 CustomRepetitionPage customRepetition = new CustomRepetitionPage();
                 customRepetition.ShowDialog();
@@ -134,7 +135,13 @@ namespace AlarmSystem
             }
 
             MessageBox.Show("Alarm Set!", TitlesModel.MessageBoxTitle,
-                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            UpdateTimerEventArgs args = new UpdateTimerEventArgs(ClassAlarmsCollection);
+
+            UpdateTimers(this, args);
+
+            this.Close();
 
         }
 
@@ -148,7 +155,7 @@ namespace AlarmSystem
             //Verify that the textbox is not empty
             if (String.IsNullOrEmpty(this.txtNewAlarmName.Text.Trim()))
             {
-                MessageBox.Show("A Customer must be entered!", TitlesModel.MessageBoxTitle,
+                MessageBox.Show("A Name must be entered!", TitlesModel.MessageBoxTitle,
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.txtNewAlarmName.Focus();
                 return false;
