@@ -8,6 +8,6 @@ namespace AlarmSystem.Models
 {
     public static class TitlesModel
     {
-        public static string MessageBoxTitle { get; } = "Pass data back to Form 1 Example";
+        public static string MessageBoxTitle { get; } = "Alarm System";
     }
 }

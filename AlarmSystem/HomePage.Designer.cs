@@ -34,6 +34,7 @@ namespace AlarmSystem
             this.btnNewAlarm = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.lstbxCurrentAlarms = new System.Windows.Forms.ListBox();
+            this.btnDeleteAlarm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblWelcome
@@ -56,7 +57,6 @@ namespace AlarmSystem
             this.lblNextAlarm.Size = new System.Drawing.Size(278, 21);
             this.lblNextAlarm.TabIndex = 1;
             this.lblNextAlarm.Text = "Next Alarm: XX:XX AM on XX/XX";
-            this.lblNextAlarm.Click += new System.EventHandler(this.lblNextAlarm_Click);
             // 
             // btnNewAlarm
             // 
@@ -72,7 +72,7 @@ namespace AlarmSystem
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(115, 495);
+            this.btnClose.Location = new System.Drawing.Point(219, 502);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(119, 33);
             this.btnClose.TabIndex = 4;
@@ -87,13 +87,24 @@ namespace AlarmSystem
             this.lstbxCurrentAlarms.Name = "lstbxCurrentAlarms";
             this.lstbxCurrentAlarms.Size = new System.Drawing.Size(311, 329);
             this.lstbxCurrentAlarms.TabIndex = 5;
-            this.lstbxCurrentAlarms.SelectedIndexChanged += new System.EventHandler(this.lstbxCurrentAlarms_SelectedIndexChanged);
+            // 
+            // btnDeleteAlarm
+            // 
+            this.btnDeleteAlarm.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteAlarm.Location = new System.Drawing.Point(27, 502);
+            this.btnDeleteAlarm.Name = "btnDeleteAlarm";
+            this.btnDeleteAlarm.Size = new System.Drawing.Size(89, 33);
+            this.btnDeleteAlarm.TabIndex = 6;
+            this.btnDeleteAlarm.Text = "Delete Alarm";
+            this.btnDeleteAlarm.UseVisualStyleBackColor = true;
+            this.btnDeleteAlarm.Click += new System.EventHandler(this.btnDeleteAlarm_Click);
             // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 547);
+            this.Controls.Add(this.btnDeleteAlarm);
             this.Controls.Add(this.lstbxCurrentAlarms);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnNewAlarm);
@@ -114,6 +125,7 @@ namespace AlarmSystem
         private System.Windows.Forms.Button btnNewAlarm;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ListBox lstbxCurrentAlarms;
+        private System.Windows.Forms.Button btnDeleteAlarm;
     }
 }
 

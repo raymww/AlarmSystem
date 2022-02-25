@@ -33,7 +33,8 @@ namespace AlarmSystem
 
         private void PopulateTimers()
         {
-            //Use LINQ to get customers from the CustomersModel
+            this.lstbxCurrentAlarms.DataSource = null;
+
             if (ClassAlarmsCollection != null)
             {
                 var alarms = (from c in ClassAlarmsCollection
@@ -64,20 +65,9 @@ namespace AlarmSystem
 
         }
 
-        private void lblNextAlarm_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        }
-
-        private void setAlarm(string name, string date, string time)
-        {
-            
-
         }
 
         private void TimersUpdate(object s, UpdateTimerEventArgs e)
@@ -89,9 +79,21 @@ namespace AlarmSystem
             this.PopulateTimers();
         }
 
-        private void lstbxCurrentAlarms_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnDeleteAlarm_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Alarm Deleted!", TitlesModel.MessageBoxTitle,
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            var test = (from c in ClassAlarmsCollection
+                        select c).ToArray();
+
+
+            var result = ClassAlarmsCollection.FindIndex(x => x.alarmName.Equals(this.lstbxCurrentAlarms.SelectedValue));
+
+            if (result > -1)
+                ClassAlarmsCollection.RemoveAt(result);
+
+            this.PopulateTimers();
         }
     }
 }
