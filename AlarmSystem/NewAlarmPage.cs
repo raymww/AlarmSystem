@@ -14,17 +14,6 @@ namespace AlarmSystem
 {
     public partial class NewAlarmPage : Form
     {
-        //public List<ClassAlarm> Timers;
-        //Delegate
-        public delegate void TimerHandler(object sender, UpdateTimerEventArgs e);
-
-        //Event for Delegate 
-        //Type CustomersHandler matches the Delegate above
-        //UpdateCustomers is the variable used by Form1
-        public event TimerHandler UpdateTimers;
-
-        //ArrayList - Updated by Form1
-        public List<ClassAlarm> ClassAlarmsCollection;
 
         public NewAlarmPage()
         {
@@ -46,32 +35,6 @@ namespace AlarmSystem
             //label
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void btnCustRepetition_Click(object sender, EventArgs e)
-        {
-            CustomRepetitionPage customRepetition = new CustomRepetitionPage();
-            customRepetition.ShowDialog();
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSet_Click(object sender, EventArgs e)
         {
             
@@ -80,40 +43,25 @@ namespace AlarmSystem
                 return;
             }
 
-            if (radbtnNoRep.Checked)
+            ClassAlarm newAlarm = new ClassAlarm()
             {
-                ClassAlarmsCollection.Add(new ClassAlarm()
-                {
-                    alarmName = this.txtNewAlarmName.Text.Trim(),
-                    date = this.dtStartDate.Text,
-                    time = this.numHour.Value.ToString() + ":" + this.numMin.Value.ToString(),
-                    repeat = false,
-                    repetition = new List<int> {0}
-                }) ;
-            }
+                alarmName = this.txtNewAlarmName.Text.Trim(),
+                date = this.dtStartDate.Text,
+                time = this.numHour.Value.ToString() + " " + this.numMin.Value.ToString(),
+                repeat = false,
+                repetition = new List<int> {0}
+            };
 
-            else if (radbtnDaily.Checked)
+            if (radbtnDaily.Checked)
             {
-                ClassAlarmsCollection.Add(new ClassAlarm()
-                {
-                    alarmName = this.txtNewAlarmName.Text.Trim(),
-                    date = this.dtStartDate.Text,
-                    time = this.numHour.Value.ToString() + ":" + this.numMin.Value.ToString(),
-                    repeat = true,
-                    repetition = new List<int>{1}
-                });
+                newAlarm.repeat = true;
+                newAlarm.repetition = new List<int> {1};
             }
 
             else if (radbtnWeekly.Checked)
             {
-                ClassAlarmsCollection.Add(new ClassAlarm()
-                {
-                    alarmName = this.txtNewAlarmName.Text.Trim(),
-                    date = this.dtStartDate.Text,
-                    time = this.numHour.Value.ToString() + ":" + this.numMin.Value.ToString(),
-                    repeat = true,
-                    repetition = new List<int>{7}
-                });
+                newAlarm.repeat = true;
+                newAlarm.repetition = new List<int> {7};
             }
 
             else if (radbtnCustom.Checked)
@@ -122,24 +70,23 @@ namespace AlarmSystem
                 customRepetition.ShowDialog();
 
                 List<int> repeatOrder = customRepetition.getRepeat();
-                
-                ClassAlarmsCollection.Add(new ClassAlarm()
-                {
-                    alarmName = this.txtNewAlarmName.Text.Trim(),
-                    date = this.dtStartDate.Text,
-                    time = this.numHour.Value.ToString() + ":" + this.numMin.Value.ToString(),
-                    repeat = true,
-                    repetition = repeatOrder
-                });
+
+                newAlarm.repeat = true;
+                newAlarm.repetition = repeatOrder;
 
             }
 
+            MessageBox.Show(dtStartDate.Text + " " + numHour.Value.ToString() + ":" + numMin.Value.ToString() + " " + newAlarm.repetition.ToString(), TitlesModel.MessageBoxTitle,
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            /*
             MessageBox.Show("Alarm Set!", TitlesModel.MessageBoxTitle,
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+            */
+            //timer is set here!!
 
-            UpdateTimerEventArgs args = new UpdateTimerEventArgs(ClassAlarmsCollection);
-
-            UpdateTimers(this, args);
+            Alarm CreatedAlarm = new Alarm(newAlarm);
+            CreatedAlarm.ShowDialog();
 
             this.Close();
 

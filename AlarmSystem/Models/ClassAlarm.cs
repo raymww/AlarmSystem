@@ -36,7 +36,7 @@ namespace AlarmSystem
         {
             return new List<ClassAlarm>
             {
-               new ClassAlarm("2-2-22", "12:00", "test1", false, new List<int>{0}),
+               new ClassAlarm("2022 3 28", "0:41", "Chelsea Will You Go To Prom With ME!!", false, new List<int>{0}),
             };
         }
     }

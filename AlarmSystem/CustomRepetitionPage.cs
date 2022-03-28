@@ -23,7 +23,17 @@ namespace AlarmSystem
 
         private void CustomRepetition_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
+            this.SetControls();
+        }
 
+        private void SetControls()
+        {
+            //form
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Text = "CustomAlarm";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

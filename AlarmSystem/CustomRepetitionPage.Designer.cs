@@ -39,14 +39,15 @@ namespace AlarmSystem
             // 
             // updownRepetition
             // 
-            this.updownRepetition.Location = new System.Drawing.Point(329, 194);
+            this.updownRepetition.Location = new System.Drawing.Point(84, 227);
+            this.updownRepetition.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.updownRepetition.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.updownRepetition.Name = "updownRepetition";
-            this.updownRepetition.Size = new System.Drawing.Size(120, 20);
+            this.updownRepetition.Size = new System.Drawing.Size(160, 22);
             this.updownRepetition.TabIndex = 0;
             this.updownRepetition.UseWaitCursor = true;
             this.updownRepetition.Value = new decimal(new int[] {
@@ -58,9 +59,10 @@ namespace AlarmSystem
             // lbltitle
             // 
             this.lbltitle.AutoSize = true;
-            this.lbltitle.Location = new System.Drawing.Point(362, 63);
+            this.lbltitle.Location = new System.Drawing.Point(128, 66);
+            this.lbltitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(58, 13);
+            this.lbltitle.Size = new System.Drawing.Size(71, 16);
             this.lbltitle.TabIndex = 1;
             this.lbltitle.Text = "Repetition:";
             this.lbltitle.UseWaitCursor = true;
@@ -68,18 +70,20 @@ namespace AlarmSystem
             // RepeatList
             // 
             this.RepeatList.AutoSize = true;
-            this.RepeatList.Location = new System.Drawing.Point(365, 98);
+            this.RepeatList.Location = new System.Drawing.Point(132, 109);
+            this.RepeatList.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RepeatList.Name = "RepeatList";
-            this.RepeatList.Size = new System.Drawing.Size(19, 13);
+            this.RepeatList.Size = new System.Drawing.Size(21, 16);
             this.RepeatList.TabIndex = 2;
             this.RepeatList.Text = "<>";
             this.RepeatList.UseWaitCursor = true;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(345, 301);
+            this.btnAdd.Location = new System.Drawing.Point(105, 358);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(100, 28);
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -88,9 +92,10 @@ namespace AlarmSystem
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(345, 351);
+            this.button1.Location = new System.Drawing.Point(105, 420);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 4;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
@@ -99,14 +104,15 @@ namespace AlarmSystem
             // 
             // CustomRepetitionPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(325, 554);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.RepeatList);
             this.Controls.Add(this.lbltitle);
             this.Controls.Add(this.updownRepetition);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CustomRepetitionPage";
             this.Text = "Custom Repetition";
             this.UseWaitCursor = true;
