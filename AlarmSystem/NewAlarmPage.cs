@@ -1,6 +1,5 @@
 ﻿using System;
 using AlarmSystem.Models;
-using AlarmSystem.Events;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -75,16 +74,11 @@ namespace AlarmSystem
                 newAlarm.repetition = repeatOrder;
 
             }
-
-            MessageBox.Show(dtStartDate.Text + " " + numHour.Value.ToString() + ":" + numMin.Value.ToString() + " " + newAlarm.repetition.ToString(), TitlesModel.MessageBoxTitle,
-                               MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            /*
+                       
             MessageBox.Show("Alarm Set!", TitlesModel.MessageBoxTitle,
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-            */
-            //timer is set here!!
 
+            //timer is set here!!
             Alarm CreatedAlarm = new Alarm(newAlarm);
             CreatedAlarm.ShowDialog();
 

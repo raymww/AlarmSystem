@@ -1,6 +1,5 @@
 ﻿using System;
 using AlarmSystem.Models;
-using AlarmSystem.Events;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

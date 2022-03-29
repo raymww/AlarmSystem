@@ -14,9 +14,11 @@ namespace AlarmSystem
 {
     public partial class Alarm : Form
     {
+
         System.Timers.Timer timer;
         SoundPlayer soundPlayer = new SoundPlayer();
         ClassAlarm alarm;
+        DateTime alarmTime;
 
         int count = 0;
         List<int> repetition;
@@ -31,11 +33,14 @@ namespace AlarmSystem
         {
             this.CenterToScreen();
             this.SetControls();
-            NextAlarm.Text = setDateTime(alarm).ToString();
+           
 
             //timer method
+            alarmTime = setDateTime(alarm);
+            NextAlarm.Text = alarmTime.ToString();
             timer = new System.Timers.Timer();
             timer.Interval = 1000;
+            timer.Start();
             timer.Elapsed += timer_Elapsed;
 
 
@@ -54,7 +59,6 @@ namespace AlarmSystem
         private void timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
             DateTime currentTime = DateTime.Now;
-            DateTime alarmTime = setDateTime(alarm);
 
             if (equalDate(currentTime, alarmTime))
             {
@@ -64,6 +68,9 @@ namespace AlarmSystem
                 if (alarm.repeat)
                 {
                     repetition = alarm.repetition;
+
+                    MessageBox.Show("Ring Ring!!", TitlesModel.MessageBoxTitle,
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     if (count < repetition.Count)
                     {
@@ -79,15 +86,15 @@ namespace AlarmSystem
                 else
                 {
                     timer.Stop();
-                    MessageBox.Show("it act worked", TitlesModel.MessageBoxTitle,
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Timer Stopped!", TitlesModel.MessageBoxTitle,
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 
             }
 
 
         }
-        
+
         private DateTime setDateTime(ClassAlarm A)
         {
             int year, month, day, hour, minute;

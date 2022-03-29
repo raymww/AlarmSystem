@@ -1,5 +1,4 @@
 ﻿using System;
-using AlarmSystem.Events;
 using AlarmSystem.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,14 +29,6 @@ namespace AlarmSystem
             this.alarmName = alarmName;
             this.repeat = repeat;
             this.repetition = repetition;
-        }
-
-        public static List<ClassAlarm> GetAlarms()
-        {
-            return new List<ClassAlarm>
-            {
-               new ClassAlarm("2022 3 28", "0:41", "Chelsea Will You Go To Prom With ME!!", false, new List<int>{0}),
-            };
         }
     }
 }
