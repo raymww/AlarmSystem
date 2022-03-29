@@ -66,10 +66,10 @@ namespace AlarmSystem
                 string fileName = "iphone_alarm.mp3";
                 string path = Path.Combine(Environment.CurrentDirectory, @"AlarmSounds\", fileName);
 
-                soundPlayer.SoundLocation = path;
+                soundPlayer.SoundLocation = @path;
                 soundPlayer.PlayLooping();
 
-                if (alarm.repeat)
+                if (alarm.repeat == true)
                 {
                     repetition = alarm.repetition;
                   
@@ -114,7 +114,7 @@ namespace AlarmSystem
         private Boolean equalDate (DateTime A, DateTime B)
         {
 
-            if (A.Year == B.Year && A.Month == B.Month && A.Day == B.Day && A.Hour == B.Hour && A.Minute == B.Minute) return true;
+            if (A.Year >= B.Year && A.Month >= B.Month && A.Day >= B.Day && A.Hour >= B.Hour && A.Minute >= B.Minute && A.Second >= B.Second) return true;
 
             return false;
         }
