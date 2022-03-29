@@ -31,6 +31,7 @@ namespace AlarmSystem
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Text = "CustomAlarm";
+            this.dtStartDate.MinDate = DateTime.Now;
             //label
         }
 

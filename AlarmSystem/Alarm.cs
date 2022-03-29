@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -33,11 +34,11 @@ namespace AlarmSystem
         {
             this.CenterToScreen();
             this.SetControls();
-           
 
             //timer method
             alarmTime = setDateTime(alarm);
             NextAlarm.Text = alarmTime.ToString();
+            
             timer = new System.Timers.Timer();
             timer.Interval = 1000;
             timer.Start();
@@ -62,16 +63,16 @@ namespace AlarmSystem
 
             if (equalDate(currentTime, alarmTime))
             {
-                soundPlayer.SoundLocation = @"C:\iphone_alarm.mp3";
+                string fileName = "iphone_alarm.mp3";
+                string path = Path.Combine(Environment.CurrentDirectory, @"AlarmSounds\", fileName);
+
+                soundPlayer.SoundLocation = path;
                 soundPlayer.PlayLooping();
 
                 if (alarm.repeat)
                 {
                     repetition = alarm.repetition;
-
-                    MessageBox.Show("Ring Ring!!", TitlesModel.MessageBoxTitle,
-                               MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                  
                     if (count < repetition.Count)
                     {
                         alarmTime.AddDays(repetition[count]);
