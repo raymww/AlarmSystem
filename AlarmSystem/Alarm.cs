@@ -63,10 +63,7 @@ namespace AlarmSystem
 
             if (equalDate(currentTime, alarmTime))
             {
-                string fileName = "iphone_alarm.mp3";
-                string path = Path.Combine(Environment.CurrentDirectory, @"AlarmSounds\", fileName);
-
-                soundPlayer.SoundLocation = @path;
+                soundPlayer.SoundLocation = @"C:\Users\Raymond Wang\source\repos\CustomAlarm\AlarmSystem\AlarmSounds\AlarmSound.wav";
                 soundPlayer.PlayLooping();
 
                 if (alarm.repeat == true)
