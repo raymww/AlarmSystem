@@ -72,9 +72,22 @@ namespace AlarmSystem
                   
                     if (count < repetition.Count)
                     {
-                        alarmTime.AddDays(repetition[count]);
+                        alarmTime = alarmTime.AddDays(repetition[count]);
                         count++;
-                        NextAlarm.Text = alarmTime.ToString();
+
+                        try
+                        {
+                            UpdateLabels upd = UpdateLabelStatus;
+                            if (lblStatus.InvokeRequired)
+                            {
+                                Invoke(upd, lblStatus, alarmTime.ToString());
+                            }
+                        } 
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
+                        //NextAlarm.Text = alarmTime.ToString();
                     }
                     else
                     {
@@ -136,5 +149,12 @@ namespace AlarmSystem
         {
             soundPlayer.Stop();
         }
+
+        delegate void UpdateLabels(Label lbl, string value);
+        void UpdateLabelStatus(Label lbl, string value)
+        {
+            lblStatus.Text = value;
+        }
+
     }
 }
