@@ -81,9 +81,10 @@ namespace AlarmSystem
 
             //timer is set here!!
             Alarm CreatedAlarm = new Alarm(newAlarm);
-            CreatedAlarm.ShowDialog();
+            this.Show();
+            CreatedAlarm.Show();
 
-            this.Close();
+            this.Dispose();
 
         }
 

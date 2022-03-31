@@ -38,7 +38,7 @@ namespace AlarmSystem
         private void btnNewAlarm_Click(object sender, EventArgs e)
         {
             NewAlarmPage newAlarm = new NewAlarmPage();
-            newAlarm.ShowDialog();
+            newAlarm.Show();
 
         }
 

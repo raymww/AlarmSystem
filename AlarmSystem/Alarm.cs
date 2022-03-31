@@ -33,7 +33,7 @@ namespace AlarmSystem
         private void Alarm_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            this.SetControls();
+            //this.SetControls();
 
             //timer method
             alarmTime = setDateTime(alarm);
@@ -63,7 +63,7 @@ namespace AlarmSystem
 
             if (equalDate(currentTime, alarmTime))
             {
-                soundPlayer.SoundLocation = @"C:\Users\Raymond Wang\source\repos\CustomAlarm\AlarmSystem\AlarmSounds\AlarmSound.wav";
+                soundPlayer.SoundLocation = this.getDirectory();
                 soundPlayer.PlayLooping();
 
                 if (alarm.repeat == true)
@@ -115,10 +115,14 @@ namespace AlarmSystem
 
             return false;
         }
-
-        private void setlbl(string txt)
+        
+        private string getDirectory()
         {
+            String directory = Directory.GetCurrentDirectory();
+            String parentDirectory = directory.Substring(0, directory.IndexOf("\\bin\\Debug"));
+            String path = parentDirectory + "\\AlarmSounds\\AlarmSound.wav";
 
+            return path;
         }
 
         private void btnStopAlarm_Click(object sender, EventArgs e)
