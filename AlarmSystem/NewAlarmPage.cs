@@ -113,6 +113,14 @@ namespace AlarmSystem
                 return false;
             }
 
+            if(!radbtnCustom.Checked && !radbtnDaily.Checked && !radbtnNoRep.Checked && !radbtnWeekly.Checked)
+            {
+                MessageBox.Show("A repetition option must be entered!", TitlesModel.MessageBoxTitle,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.radbtnDaily.Focus();
+                return false;
+            }
+
             return true;
         }
 

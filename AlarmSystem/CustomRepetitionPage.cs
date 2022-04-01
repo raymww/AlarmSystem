@@ -63,5 +63,10 @@ namespace AlarmSystem
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Dispose();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

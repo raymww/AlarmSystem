@@ -34,7 +34,6 @@ namespace AlarmSystem
             this.MinimizeBox = false;
             this.AutoSize = true;
             this.Text = "CustomAlarm";
-            //label
         }
         private void btnNewAlarm_Click(object sender, EventArgs e)
         {

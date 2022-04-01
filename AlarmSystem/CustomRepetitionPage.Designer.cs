@@ -112,6 +112,7 @@ namespace AlarmSystem
             this.label1.Size = new System.Drawing.Size(314, 144);
             this.label1.TabIndex = 5;
             this.label1.Text = resources.GetString("label1.Text");
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // CustomRepetitionPage
             // 
