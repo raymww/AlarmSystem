@@ -117,4 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>The custom repetition function of this program works
+in the following way: 
+
+You add intervals to the list that represent the days
+before the next alarm. For example, adding 1 means
+the next alarm will sound in 1 day, or the next day. 
+Adding 7 means the next alarm will be in 7 days, or a
+full week. At the end of the list, the repetition will loop
+back to the beginning.</value>
+  </data>
 </root>

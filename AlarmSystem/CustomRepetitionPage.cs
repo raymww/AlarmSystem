@@ -18,7 +18,7 @@ namespace AlarmSystem
         public CustomRepetitionPage()
         {
             InitializeComponent();
-            RepeatList.Text = "";
+            RepeatList.Text = "[]";
         }
 
         private void CustomRepetition_Load(object sender, EventArgs e)
@@ -34,12 +34,20 @@ namespace AlarmSystem
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Text = "CustomAlarm";
+            this.AutoSize = true;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             repeatOrder.Add((int)updownRepetition.Value);
-            RepeatList.Text += " " + updownRepetition.Value + ",";
+            if(RepeatList.Text.Equals("[]"))
+                    RepeatList.Text = "[" + updownRepetition.Value + "]";
+            else
+            {
+                RepeatList.Text = RepeatList.Text.Substring(0, RepeatList.Text.Length - 1);
+                RepeatList.Text += ", " + updownRepetition.Value + "]";
+            }
+            
             MessageBox.Show("Added!", TitlesModel.MessageBoxTitle,
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

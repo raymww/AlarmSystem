@@ -32,13 +32,13 @@ namespace AlarmSystem
 
         private void Alarm_Load(object sender, EventArgs e)
         {
-            this.CenterToScreen();
-            //this.SetControls();
+            this.SetControls();
+
+            alarmTime = setDateTime(alarm);
+            lblNextAlarm.Text = "Next Alarm: " + alarmTime.ToString();
+            AlarmName.Text = alarm.alarmName;
 
             //timer method
-            alarmTime = setDateTime(alarm);
-            NextAlarm.Text = alarmTime.ToString();
-            
             timer = new System.Timers.Timer();
             timer.Interval = 1000;
             timer.Start();
@@ -49,12 +49,12 @@ namespace AlarmSystem
 
         private void SetControls()
         {
-            //form
+            this.CenterToScreen();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.AutoSize = true;
             this.Text = "CustomAlarm";
-            AlarmName.Text = alarm.alarmName;
         }
 
         private void timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
@@ -78,16 +78,15 @@ namespace AlarmSystem
                         try
                         {
                             UpdateLabels upd = UpdateLabelStatus;
-                            if (lblStatus.InvokeRequired)
+                            if (lblNextAlarm.InvokeRequired)
                             {
-                                Invoke(upd, lblStatus, alarmTime.ToString());
+                                Invoke(upd, lblNextAlarm, alarmTime.ToString());
                             }
                         } 
                         catch(Exception ex)
                         {
                             MessageBox.Show(ex.ToString());
                         }
-                        //NextAlarm.Text = alarmTime.ToString();
                     }
                     else
                     {
@@ -153,7 +152,7 @@ namespace AlarmSystem
         delegate void UpdateLabels(Label lbl, string value);
         void UpdateLabelStatus(Label lbl, string value)
         {
-            lblStatus.Text = value;
+            lblNextAlarm.Text = "Next Alarm: " + value;
         }
 
     }
